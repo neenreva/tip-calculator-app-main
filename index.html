@@ -24,13 +24,13 @@
   <body>
     <header><img src="images/logo.svg" alt="" /></header>
     <main>
-      <section>
+      <section class="input">
         <div>
           <p>Bill</p>
           <input type="number" />
         </div>
 
-        <div>
+        <div class="btns">
           <p>Select Tip %</p>
           <button>5%</button> <button>10%</button> <button>15%</button>
           <button>25%</button> <button>50%</button>
@@ -46,19 +46,25 @@
           <input type="number" />
         </div>
       </section>
-      <section>
-        <div>
-          <p>Tip Amount</p>
-          <span>/ person</span>
+      <section class="output">
+        <div class="tip-container">
+          <div>
+            <p>Tip Amount</p>
+            <span>/ person</span>
+          </div>
+          <h2>$4.27</h2>
         </div>
-        <div>
-          <p>Total</p>
-          <span>/ person Reset</span>
+        <div class="total-container">
+          <div>
+            <p>Total</p>
+            <span>/ person Reset</span>
+          </div>
+          <h2>$32.79</h2>
         </div>
       </section>
     </main>
 
-    <footer class="attribution">
+    <footer class="footer">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a

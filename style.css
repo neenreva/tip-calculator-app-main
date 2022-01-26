@@ -1,83 +1,104 @@
-html,
-body,
-div,
-span,
-h1,
-h2,
-h3,
-p,
-a,
-img,
-center,
-ol,
-ul,
-li,
-form,
-label,
-footer,
-header,
-main,
-section {
+* {
   margin: 0;
   padding: 0;
-  border: 0;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-footer,
-header,
-main,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-
-/* Don't kill focus outline for keyboard users: http://24ways.org/2009/dont-lose-your-focus */
-a:hover,
-a:active {
-  outline: none;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
 }
 
 html {
   background-color: hsl(185, 41%, 84%);
-  font-family: "Space Mono", monospace;
 }
 
-@media (min-width: 800px) {
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+main,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  border: 1px dotted;
+  margin: min(10vw, 2rem) 0;
+}
+
+main {
+  border: 1px dotted;
+  background-color: hsl(0, 0%, 100%);
+  flex-direction: column;
+  align-self: center;
+  max-width: 23rem;
+  border-radius: 1.5rem;
+  padding: 2rem;
+}
+
+button {
+  width: 9rem;
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
+  height: 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.btns {
+  margin: 0;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid;
+}
+
+.output {
+  background-color: hsl(183, 100%, 15%);
+  width: 100%;
+  border-radius: 0.75rem;
+  margin: 2rem;
+  padding: 2rem;
+}
+
+.tip-container,
+.total-container {
+  display: flex;
+  color: white;
+}
+
+footer {
+  display: flex;
+  text-align: center;
+  border: 1px dotted;
+}
+
+@media (min-width: 600px) {
   body {
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  header,
-  main,
-  footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   header {
-    border: 1px solid;
+    border: 1px dotted pink;
     flex: 1;
   }
 
   main {
-    border: 1px solid;
+    border: 1px dotted pink;
+    flex-direction: row;
     flex: 2;
-    /* flex-direction: column; */
+    max-width: none;
   }
 
+  /* button {
+
+  } */
+
   footer {
-    border: 1px solid;
+    border: 1px dotted pink;
     flex: 1;
     align-items: flex-end;
   }
