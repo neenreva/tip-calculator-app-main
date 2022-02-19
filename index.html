@@ -20,30 +20,38 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
   </head>
   <body>
     <header><img src="images/logo.svg" alt="" /></header>
     <main>
       <section class="input">
-        <div>
+        <div class="bill">
           <p>Bill</p>
-          <input type="number" />
+          <img src="images/icon-dollar.svg" alt="" />
+          <input class="bill-total" type="number" placeholder="0" min="0" />
         </div>
 
-        <div class="btns">
-          <p>Select Tip %</p>
-          <button>5%</button> <button>10%</button> <button>15%</button>
-          <button>25%</button> <button>50%</button>
-
-          <input type="text" value="Custom" />
+        <div class="tip-btn-container">
+          <p class="tip-head">Select Tip %</p>
+          <button class="tip-percent" data-num=".05">5%</button>
+          <button class="tip-percent" data-num=".1">10%</button>
+          <button class="tip-percent" data-num=".15">15%</button>
+          <button class="tip-percent" data-num=".25">25%</button>
+          <button class="tip-percent" data-num=".5">50%</button>
+          <input
+            class="custom-tip"
+            type="number"
+            placeholder="Custom"
+            min="1"
+            max="100"
+          />
         </div>
 
-        <div>
-          <div>
-            <p>Number of People</p>
-            <p>Can't be zero</p>
-          </div>
-          <input type="number" />
+        <div class="people">
+          <p>Number of People</p>
+          <img src="images/icon-person.svg" alt="" />
+          <input class="divide" type="number" min="1" placeholder="-" />
         </div>
       </section>
       <section class="output">
@@ -52,15 +60,16 @@
             <p>Tip Amount</p>
             <span>/ person</span>
           </div>
-          <h2>$4.27</h2>
+          <h1 class="tip-pp">$0.00</h1>
         </div>
         <div class="total-container">
           <div>
             <p>Total</p>
-            <span>/ person Reset</span>
+            <span>/ person</span>
           </div>
-          <h2>$32.79</h2>
+          <h1 class="total-pp">$0.00</h1>
         </div>
+        <button class="reset">RESET</button>
       </section>
     </main>
 
@@ -68,7 +77,7 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by <a href="#">neenreva</a>.
     </footer>
   </body>
 </html>
