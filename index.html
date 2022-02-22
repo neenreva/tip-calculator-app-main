@@ -29,7 +29,13 @@
         <div class="bill">
           <p>Bill</p>
           <img src="images/icon-dollar.svg" alt="" />
-          <input class="bill-total" type="number" placeholder="0" min="0" />
+          <input
+            class="bill-total"
+            type="number"
+            placeholder="0"
+            min="0"
+            onkeypress="return event.charCode != 32"
+          />
         </div>
 
         <div class="tip-btn-container">
@@ -45,29 +51,42 @@
             placeholder="Custom"
             min="1"
             max="100"
+            onkeypress="return event.charCode != 32"
           />
         </div>
 
         <div class="people">
-          <p>Number of People</p>
+          <div>
+            <p>Number of People</p>
+            <p class="zero-people hidden">Can't be zero</p>
+          </div>
           <img src="images/icon-person.svg" alt="" />
-          <input class="divide" type="number" min="1" placeholder="-" />
+          <input
+            class="divide"
+            type="number"
+            min="1"
+            placeholder="-"
+            value="1"
+            onkeypress="return event.charCode != 32"
+          />
         </div>
       </section>
       <section class="output">
-        <div class="tip-container">
-          <div>
-            <p>Tip Amount</p>
-            <span>/ person</span>
+        <div>
+          <div class="tip-container">
+            <div class="breakdown">
+              <p>Tip Amount</p>
+              <span>/ person</span>
+            </div>
+            <h1 class="tip-pp">$0.00</h1>
           </div>
-          <h1 class="tip-pp">$0.00</h1>
-        </div>
-        <div class="total-container">
-          <div>
-            <p>Total</p>
-            <span>/ person</span>
+          <div class="total-container">
+            <div class="breakdown">
+              <p>Total</p>
+              <span>/ person</span>
+            </div>
+            <h1 class="total-pp">$0.00</h1>
           </div>
-          <h1 class="total-pp">$0.00</h1>
         </div>
         <button class="reset">RESET</button>
       </section>
@@ -77,7 +96,7 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">neenreva</a>.
+      >. Coded by <a href="https://github.com/neenreva">neenreva</a>.
     </footer>
   </body>
 </html>

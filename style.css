@@ -1,19 +1,31 @@
+:root {
+  --Strongcyan: hsl(172, 67%, 45%);
+  --Verydarkcyan: hsl(183, 100%, 15%);
+  --Darkgrayishcyan1: hsl(186, 14%, 43%);
+  --Darkgrayishcyan2: hsl(184, 14%, 56%);
+  --Lightgrayishcyan1: hsl(185, 41%, 84%);
+  --Lightgrayishcyan2: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Space Mono", monospace;
   font-size: 100%;
+  border-style: none;
 }
 
 html {
-  background-color: hsl(185, 41%, 84%);
-  width: 100vw;
+  background-color: var(--Lightgrayishcyan1);
   height: 100%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 body {
-  margin: 0rem auto;
   max-width: 375px;
 }
 
@@ -24,10 +36,12 @@ header {
 }
 
 main {
-  display: grid;
-  grid-template-rows: 1fr;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 2rem;
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--white);
   border-radius: 1rem;
 }
 
@@ -44,8 +58,14 @@ main {
 .bill img,
 .people img {
   position: absolute;
-  padding: 0.55rem 0.75rem;
-  color: hsl(186, 14%, 43%);
+  padding: 1rem;
+  color: var(--Darkgrayishcyan2);
+}
+
+.bill input,
+.people input {
+  font-weight: 700;
+  height: 3rem;
 }
 
 .tip-btn-container {
@@ -63,35 +83,78 @@ main {
 }
 
 .tip-percent {
-  color: hsl(0, 0%, 100%);
-  background-color: hsl(183, 100%, 15%);
-  border: none;
+  color: var(--white);
+  background-color: var(--Verydarkcyan);
   border-radius: 0.25rem;
 }
 
+.tip-percent:hover {
+  background-color: var(--Lightgrayishcyan1);
+}
+
+.tip-percent,
+.custom-tip {
+  font-size: 1.25rem;
+  font-weight: 700;
+  height: 2.75rem;
+}
+
 .active-btn {
-  color: hsl(183, 100%, 15%);
-  background-color: hsl(0, 0%, 100%);
+  color: var(--Verydarkcyan);
+  background-color: var(--Strongcyan);
+}
+
+.people div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.zero-people {
+  color: orange;
 }
 
 .output {
-  background-color: hsl(183, 100%, 15%);
+  background-color: var(--Verydarkcyan);
   border-radius: 0.75rem;
-  color: hsl(0, 0%, 100%);
+  color: var(--white);
   padding: 1.5rem;
 }
 
+.tip-container,
+.total-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.25rem 0;
+}
+
+.reset {
+  width: 100%;
+  padding: 0.51rem;
+  margin-top: 1rem;
+  background-color: var(--Strongcyan);
+  border-radius: 0.25rem;
+  font-weight: 700;
+  color: var(--Verydarkcyan);
+}
+
+.reset:hover {
+  background-color: var(--Lightgrayishcyan1);
+}
+
 footer {
+  margin: 2rem;
   font-size: 0.6rem;
   text-align: center;
+  color: var(--Darkgrayishcyan1);
 }
 
 input {
   width: 100%;
-  color: hsl(183, 100%, 15%);
+  color: var(--Verydarkcyan);
   font-size: 1.5rem;
   text-align: right;
-  background-color: hsl(185, 41%, 97%);
+  background-color: var(--Lightgrayishcyan2);
   border: none;
   border-radius: 0.25rem;
   padding-right: 0.75rem;
@@ -102,7 +165,7 @@ input[type="number"] {
 }
 
 input:focus {
-  outline: 2px solid hsl(172, 67%, 45%);
+  outline: 2px solid var(--Strongcyan);
 }
 
 input::-webkit-outer-spin-button,
@@ -119,29 +182,65 @@ button {
   cursor: pointer;
 }
 
-@media (min-width: 700px) {
-  html {
-    width: 100vw;
-    height: 100%;
-    display: flex;
+p {
+  font-weight: 700;
+  color: var(--Darkgrayishcyan1);
+}
 
-  }
+span {
+  font-size: 0.751rem;
+  font-weight: 700;
+  padding-top: -1rem;
+  color: var(--Darkgrayishcyan2);
+}
+
+.breakdown p {
+  color: var(--white);
+  line-height: 0.751rem;
+}
+
+h1 {
+  text-align: right;
+  color: hsl(172, 67%, 45%);
+  font-size: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+:hover {
+  transition: all 0.5s ease;
+}
+
+a {
+  text-decoration: none;
+  color: var(--Lightgrayishcyan2);
+}
+
+a:hover {
+  color: var(--Strongcyan);
+}
+
+@media (min-width: 850px) {
   body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 80vw;
+    margin-top: -7rem;
+    max-width: 60vw;
   }
 
   header {
-    display: flex;
-    justify-content: center;
+    margin-bottom: 4rem;
   }
 
   main {
-    width: 100%;
+    min-width: 750px;
+    width: 66vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-self: center;
     padding: 2rem;
     gap: 2rem;
   }
@@ -161,12 +260,20 @@ button {
 
   .output {
     grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   footer {
+    width: 100%;
     position: fixed;
     bottom: 0;
-    font-size: 0.6rem;
-    text-align: center;
+    left: 1vw;
+    margin: 1rem 0;
+  }
+
+  h1 {
+    font-size: 2.75rem;
   }
 }
