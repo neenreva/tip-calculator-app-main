@@ -17,7 +17,7 @@ let total;
 //Main function for the calculations w/error checks
 function calcNums() {
   if (!peopleError.classList.contains("hidden")) {
-    console.log((people.style = ""));
+    people.style = "";
     peopleError.classList.toggle("hidden");
   }
 
@@ -34,7 +34,7 @@ function calcNums() {
     totalPerPerson.innerHTML = "$0.00";
   }
 
-  if (people.value.trim() == "0" && people.value != "") {
+  if (people.value == "0") {
     tipPerPerson.innerHTML = "$0.00";
     totalPerPerson.innerHTML = "$0.00";
     if (peopleError.classList.contains("hidden")) {
